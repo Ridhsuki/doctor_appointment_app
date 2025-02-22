@@ -1,5 +1,5 @@
 import 'package:doctor_appointment_app/main_layout.dart';
-import 'package:doctor_appointment_app/screens/auth_page.dart';
+import 'package:doctor_appointment_app/screens/auth_screen.dart';
 import 'package:doctor_appointment_app/utils/config.dart';
 import 'package:flutter/material.dart';
 
@@ -39,7 +39,10 @@ class MyApp extends StatelessWidget {
         ),
       ),
       initialRoute: '/',
-      routes: {'/': (context) => AuthPage(), 'main': (context) => MainLayout()},
+      routes: {
+        '/': (context) => AuthScreen(),
+        'main': (context) => MainLayout()
+      },
     );
   }
 }

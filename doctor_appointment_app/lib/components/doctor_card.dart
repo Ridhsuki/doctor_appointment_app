@@ -1,14 +1,11 @@
 import 'package:doctor_appointment_app/utils/config.dart';
 import 'package:flutter/material.dart';
 
-class DoctorCard extends StatefulWidget {
-  const DoctorCard({super.key});
+class DoctorCard extends StatelessWidget {
+  const DoctorCard({super.key, required this.route});
 
-  @override
-  State<DoctorCard> createState() => _DoctorCardState();
-}
+  final String route;
 
-class _DoctorCardState extends State<DoctorCard> {
   @override
   Widget build(BuildContext context) {
     Config().init(context);
@@ -67,7 +64,8 @@ class _DoctorCardState extends State<DoctorCard> {
             ],
           ),
         ),
-        onTap: () => Navigator.defaultRouteName,
+        // redirect to doctor detail screen
+        onTap: () => Navigator.of(context).pushNamed(route),
       ),
     );
   }

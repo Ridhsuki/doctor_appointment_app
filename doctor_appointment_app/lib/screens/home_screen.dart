@@ -132,7 +132,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 Config.spaceSmall,
                 Column(
                   children: List.generate(10, (index) {
-                    return DoctorCard();
+                    return DoctorCard(
+                      route: 'doc_details',
+                    );
                   }),
                 )
               ],

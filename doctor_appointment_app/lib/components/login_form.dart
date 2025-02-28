@@ -1,6 +1,10 @@
 import 'package:doctor_appointment_app/components/button.dart';
+import 'package:doctor_appointment_app/main.dart';
+import 'package:doctor_appointment_app/model/auth_model.dart';
+import 'package:doctor_appointment_app/provider/dio_provider.dart';
 import 'package:doctor_appointment_app/utils/config.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -61,13 +65,26 @@ class _LoginFormState extends State<LoginForm> {
                 prefixIconColor: Config.primaryColor),
           ),
           Config.spaceSmall,
-          Button(
-              width: double.infinity,
-              title: 'Sign In',
-              disable: false,
-              onpressed: () {
-                Navigator.of(context).pushNamed('main');
-              })
+          Consumer<AuthModel>(
+            builder: (context, auth, child) {
+              return Button(
+                width: double.infinity,
+                title: 'Sign In',
+                onpressed: () async {
+                  final token = await DioProvider()
+                      .getToken(_emailController.text, _passController.text);
+
+                  if (token) {
+                    auth.loginSuccess(); //update login status
+                    //redirect to main screen
+                    MyApp.navigatorKey.currentState!.pushNamed('main');
+                  }
+                  // Navigator.of(context).pushNamed('main');
+                },
+                disable: false,
+              );
+            },
+          )
         ],
       ),
     );

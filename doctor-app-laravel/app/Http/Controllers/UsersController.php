@@ -21,7 +21,6 @@ class UsersController extends Controller
      */
     public function login(Request $request)
     {
-
         //validasi input
         $request->validate([
             'email' => 'required|email',

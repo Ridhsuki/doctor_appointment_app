@@ -1,0 +1,1 @@
+C:\Users\Thinkpad\Documents\Flutter\doctor_appointment_tasks\doctor_appointment_app\build\app\intermediates\cxx\Debug\316m3v4x\obj\arm64-v8a

@@ -15,13 +15,13 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This for push navigator
   static final navigatorKey = GlobalKey<NavigatorState>();
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<AuthModel>(
       create: (context) => AuthModel(),
       child: MaterialApp(
+        navigatorKey: navigatorKey,
         title: 'Flutter Doctor App',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(

@@ -1,0 +1,2 @@
+C:/Users/Thinkpad/Documents/Flutter/doctor_appointment_tasks/doctor_appointment_app/android/app/.cxx/Debug/316m3v4x/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/Thinkpad/Documents/Flutter/doctor_appointment_tasks/doctor_appointment_app/android/app/.cxx/Debug/316m3v4x/x86_64/CMakeFiles/rebuild_cache.dir

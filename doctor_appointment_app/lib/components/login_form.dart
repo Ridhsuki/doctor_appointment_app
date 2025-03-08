@@ -71,16 +71,38 @@ class _LoginFormState extends State<LoginForm> {
                 width: double.infinity,
                 title: 'Sign In',
                 onpressed: () async {
-                  final token = await DioProvider()
+                  bool isSuccess = await DioProvider()
                       .getToken(_emailController.text, _passController.text);
 
-                  if (token) {
-                    auth.loginSuccess(); //update login status
-                    //redirect to main screen
-                    MyApp.navigatorKey.currentState!.pushNamed('main');
+                  if (isSuccess) {
+                    auth.loginSuccess();
+                    print("Login sukses, berpindah halaman...");
+                    if (MyApp.navigatorKey.currentState != null) {
+                      MyApp.navigatorKey.currentState!.pushNamed('main');
+                    } else {
+                      print(
+                          "navigatorKey tidak ditemukan, cek konfigurasi MyApp!");
+                    }
+                  } else {
+                    print("Login gagal, email atau password salah.");
                   }
-                  // Navigator.of(context).pushNamed('main');
                 },
+
+                // onpressed: () async {
+                //   // final token = await DioProvider()
+                //   //     .getToken(_emailController.text, _passController.text);
+                //   bool isSuccess = await DioProvider()
+                //       .getToken(_emailController.text, _passController.text);
+                //   if (isSuccess) {
+                //     // ✅ Perbaikan: Gunakan boolean dengan jelas
+                //     auth.loginSuccess();
+                //     if (MyApp.navigatorKey.currentState != null) {
+                //       MyApp.navigatorKey.currentState!.pushNamed('main');
+                //     }
+                //   } else {
+                //     print("Login gagal, periksa kembali email dan password.");
+                //   }
+                // },
                 disable: false,
               );
             },
@@ -90,3 +112,8 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 }
+
+// I/appointment_app(17407): Compiler allocated 5417KB to compile void android.view.ViewRootImpl.performTraversals()
+// E/libEGL  (17407): called unimplemented OpenGL ES API
+// I/Choreographer(17407): Skipped 179 frames!  The application may be doing too much work on its main thread.
+// E/libEGL  (17407): called unimplemented OpenGL ES API

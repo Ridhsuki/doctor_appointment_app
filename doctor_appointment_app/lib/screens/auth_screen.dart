@@ -1,4 +1,5 @@
 import 'package:doctor_appointment_app/components/login_form.dart';
+import 'package:doctor_appointment_app/components/register_form.dart';
 import 'package:doctor_appointment_app/components/social_button.dart';
 import 'package:doctor_appointment_app/utils/config.dart';
 import 'package:doctor_appointment_app/utils/text.dart';
@@ -12,11 +13,13 @@ class AuthScreen extends StatefulWidget {
 }
 
 class _AuthScreenState extends State<AuthScreen> {
+  bool isSignIn = true;
   @override
   Widget build(BuildContext context) {
     Config().init(context);
     return Scaffold(
-      resizeToAvoidBottomInset: true,  // Menjaga layout tetap fleksibel saat keyboard muncul
+      resizeToAvoidBottomInset:
+          true, // Menjaga layout tetap fleksibel saat keyboard muncul
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
@@ -33,27 +36,31 @@ class _AuthScreenState extends State<AuthScreen> {
                 ),
                 Config.spaceSmall,
                 Text(
-                  AppText.enText['signIn_text']!,
+                  isSignIn
+                      ? AppText.enText['signIn_text']!
+                      : AppText.enText['register_text']!,
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Config.spaceSmall,
-                LoginForm(),
+                isSignIn ? LoginForm() : RegisterForm(),
                 Config.spaceSmall,
-                Center(
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      AppText.enText['forgot_password']!,
-                      style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                    ),
-                  ),
-                ),
+                isSignIn
+                    ? Center(
+                        child: TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            AppText.enText['forgot_password']!,
+                            style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+                          ),
+                        ),
+                      )
+                    : Container(),
                 // Hilangkan Spacer() yang dapat menyebabkan overflow
                 Center(
                   child: Text(
@@ -78,19 +85,28 @@ class _AuthScreenState extends State<AuthScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      AppText.enText['signUp_text']!,
+                      isSignIn
+                          ? AppText.enText['signUp_text']!
+                          : AppText.enText['registered_text']!,
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.normal,
                         color: Colors.grey.shade500,
                       ),
                     ),
-                    const Text(
-                      ' Sign Up',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.black,
+                    TextButton(
+                      onPressed: () {
+                        setState(() {
+                          isSignIn = !isSignIn;
+                        });
+                      },
+                      child: Text(
+                        isSignIn ? 'Sign Up': 'Sign In',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.black,
+                        ),
                       ),
                     )
                   ],

@@ -37,54 +37,6 @@ class DioProvider {
       print("Error saat login: $error");
       return false;
     }
-    // try {
-    //   var response = await Dio().post(
-    //     'http://10.0.2.2:8000/api/login',
-    //     data: {'email': email, 'password': password},
-    //   );
-
-    //   print("Response: ${response.data}"); // Debugging
-
-    //   if (response.statusCode == 200 && response.data != null) {
-    //     if (response.data is Map<String, dynamic>) {
-    //       // Pastikan response adalah JSON
-    //       final token = response.data['token']; // Ambil token dari JSON
-    //       if (token != null && token.isNotEmpty) {
-    //         final SharedPreferences prefs =
-    //             await SharedPreferences.getInstance();
-    //         await prefs.setString('token', token);
-    //         return true;
-    //       }
-    //     }
-    //   }
-    //   return false;
-    // } catch (error) {
-    //   print("Error in getToken: $error"); // Debugging
-    //   return false; // Harus kembalikan boolean, bukan string
-    // }
-
-    // try {
-    //   var response = await Dio().post('http://10.0.2.2:8000/api/login',
-    //       data: {'email': email, 'password': password});
-    //   if (response.statusCode == 200 && response.data != null) {
-    //     final token = response.data['token']; // Ambil token dari JSON
-    //     if (token != null) {
-    //       final SharedPreferences prefs = await SharedPreferences.getInstance();
-    //       await prefs.setString('token', token);
-    //       return true;
-    //     }
-    //   }
-    //   return false;
-    //   // if (response.statusCode == 200 && response.data != '') {
-    //   //   final SharedPreferences prefs = await SharedPreferences.getInstance();
-    //   //   await prefs.setString('token', response.data);
-    //   //   return true;
-    //   // } else {
-    //   //   return false;
-    //   // }
-    // } catch (error) {
-    //   return error;
-    // }
   }
 
   //get user data
@@ -103,6 +55,25 @@ class DioProvider {
       }
     } catch (error) {
       return error;
+    }
+  }
+
+  //register new user
+  Future<bool> registerUser(
+      String username, String email, String password) async {
+    try {
+      var user = await Dio().post(
+        'http://10.0.2.2:8000/api/register',
+        data: {'name': username, 'email': email, 'password': password},
+      );
+      if (user.statusCode == 201 && user.data != null) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (error) {
+      print("Error registering user: $error"); // logging error
+      return false;
     }
   }
 }

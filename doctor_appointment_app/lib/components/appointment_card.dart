@@ -35,7 +35,7 @@ class _AppointmentCardState extends State<AppointmentCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Dr Tsunade',
+                        'Dr Tenma Kenzo',
                         style: TextStyle(color: Colors.white),
                       ),
                       SizedBox(height: 2),

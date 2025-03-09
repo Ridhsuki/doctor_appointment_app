@@ -32,7 +32,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   height: 10,
                 ),
                 Text(
-                  'Amanda Tan',
+                  'Yusi Dewi',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,

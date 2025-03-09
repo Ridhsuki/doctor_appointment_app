@@ -49,7 +49,7 @@ Berikut adalah screenshot beberapa tampilan UI yang telah dibuat pada aplikasi i
 ## Demo
 
 Demo aplikasi yang telah saya buat dapat dilihat melalui video YouTube berikut:
-- **YouTube Demo**: [Link nyusul](https://youtu.be/xvFZjo5PgG0?si=xrzG5lTY0skP0BPL)
+- **YouTube Demo**: [Doctor Appointment App Demo | Assigntment](https://youtu.be/UxUwthtbX0s)
 
 ## Tutorial dan Referensi
 

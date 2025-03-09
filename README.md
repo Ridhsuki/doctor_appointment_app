@@ -4,7 +4,7 @@
 
 Ini adalah aplikasi **Doctor Appointment** yang dibuat menggunakan **Flutter** untuk frontend (UI) dan **Laravel** untuk backend. Aplikasi ini dibuat sebagai bagian dari tugas kampus yang diberikan oleh **Pak Dedi Gunawan**. Dalam proses pembuatan aplikasi ini, saya mengikuti tutorial video tanpa penjelasan interaktif, yang menyebabkan saya mengalami **tutorial hell**.
 
-Aplikasi ini memiliki tampilan antarmuka yang sudah selesai, namun backend-nya belum sepenuhnya selesai karena keterbatasan waktu. Oleh karena itu, repositori ini saya buat sebagai arsip dan bukti pengerjaan tugas.
+Aplikasi ini memiliki tampilan antarmuka yang sudah selesai, namun backend-nya belum sepenuhnya selesai karena keterbatasan waktu. **Backend** hanya berfungsi untuk proses **login** dan tidak ada fungsionalitas lain yang selesai. Oleh karena itu, repositori ini saya buat sebagai arsip dan bukti pengerjaan tugas.
 
 ## Struktur Repository
 

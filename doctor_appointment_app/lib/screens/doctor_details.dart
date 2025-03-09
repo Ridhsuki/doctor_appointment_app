@@ -37,27 +37,25 @@ class _DoctorDetailsState extends State<DoctorDetails> {
       ),
       body: SafeArea(
           child: Column(
-        children: <Widget>[
-          // doctor avatar & intro
-          AboutDoctor(),
-          DetailBody(),
-          const Spacer(),
-          Padding(
-            padding: EdgeInsets.all(20),
-            child: Button(
-              width: double.infinity,
-              title: 'Book Appointment',
-              disable: false,
-              onpressed: () {
-                Navigator.of(context).pushNamed(
-                  'booking_page',
-                  // arguments: {"doctor_id"}
-                );
-              },
-            ),
-          )
-        ],
-      )),
+            children: <Widget>[
+              AboutDoctor(),
+              DetailBody(),
+              const Spacer(),
+              Padding(
+                padding: EdgeInsets.all(20),
+                child: Button(
+                  width: double.infinity,
+                  title: 'Book Appointment',
+                  disable: false,
+                  onpressed: () {
+                    Navigator.of(context).pushNamed(
+                      'booking_page',
+                    );
+                  },
+                ),
+              )
+            ],
+          )),
     );
   }
 }
@@ -74,12 +72,12 @@ class AboutDoctor extends StatelessWidget {
         children: <Widget>[
           const CircleAvatar(
             radius: 65.1,
-            backgroundImage: AssetImage('assets/profile1.jpg'),
+            backgroundImage: AssetImage('assets/profile3.jpg'),
             backgroundColor: Colors.white,
           ),
           Config.spaceMedium,
           Text(
-            'Dr Asakusa',
+            'Dr Tenma Kenzo',
             style: TextStyle(
               color: Colors.black,
               fontSize: 24,
@@ -90,7 +88,7 @@ class AboutDoctor extends StatelessWidget {
           SizedBox(
             width: Config.widthSize * 0.75,
             child: Text(
-              'MBBS (International Medical University, Malaysia), MRCP (Royal College of Physicians, United Kingdom)',
+              "Japanese neurosurgeon working at Eisler Memorial Hospital in Düsseldorf. his father and brother also being doctors and that his family ties grew weaker when he left Japan for Germany.",
               style: TextStyle(
                 fontSize: 15,
                 color: Colors.grey,
@@ -103,7 +101,7 @@ class AboutDoctor extends StatelessWidget {
           SizedBox(
             width: Config.widthSize * 0.75,
             child: Text(
-              'Blok M, Osaka, Japan.',
+              'Eisler Memorial Hospital in Düsseldorf, Germany.',
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
@@ -140,9 +138,9 @@ class DetailBody extends StatelessWidget {
               fontSize: 18,
             ),
           ),
-          Config.spaceSmall,
+          // Config.spaceSmall,
           Text(
-            'Dr Asakusa is a expereiennan alorem ipsum dolor sit amet sit ama teme ikuzooo temeraaa',
+            "lorem ipsum dolor sit amet",
             style: TextStyle(fontWeight: FontWeight.w500, height: 1.5),
             softWrap: true,
             textAlign: TextAlign.justify,
@@ -160,7 +158,7 @@ class DoctorInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        InfoCard(label: 'Patiens', value: '100'),
+        InfoCard(label: 'Patiens', value: '73'),
         SizedBox(width: 15),
         InfoCard(label: 'Experiences', value: '10 years'),
         SizedBox(width: 15),
@@ -194,7 +192,7 @@ class InfoCard extends StatelessWidget {
               style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
-                color: Colors.black,
+                color: Colors.white,
               ),
             ),
             SizedBox(height: 10),

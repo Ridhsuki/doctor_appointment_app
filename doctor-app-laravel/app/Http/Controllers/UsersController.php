@@ -14,7 +14,35 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        $user = array(); //this will return a set of user and doctor data
+        $user = Auth::user();
+        $doctor = User::where('type', 'doctor')->get();
+        $details = $user->user_details;
+        $doctorData = Doctor::all();
+        //this is the date format without leading
+        $date = now()->format('n/j/Y'); //change date format to suit the format in database
+
+        //make this appointment filter only status is "upcoming"
+        $appointment = Appointments::where('status', 'upcoming')->where('date', $date)->first();
+
+        //collect user data and all doctor details
+        foreach($doctorData as $data){
+            //sorting doctor name and doctor details
+            foreach($doctor as $info){
+                if($data['doc_id'] == $info['id']){
+                    $data['doctor_name'] = $info['name'];
+                    $data['doctor_profile'] = $info['profile_photo_url'];
+                    if(isset($appointment) && $appointment['doc_id'] == $info['id']){
+                        $data['appointments'] = $appointment;
+                    }
+                }
+            }
+        }
+
+        $user['doctor'] = $doctorData;
+        $user['details'] = $details; //return user details here together with doctor list
+
+        return $user; //return all data
     }
     /**
      * Login.

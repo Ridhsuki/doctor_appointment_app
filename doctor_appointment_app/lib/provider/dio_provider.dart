@@ -13,13 +13,10 @@ class DioProvider {
       if (response.statusCode == 200) {
         var responseData = response.data;
 
-        // Cek apakah responseData adalah String atau JSON
         String? token;
         if (responseData is String) {
-          // Jika responsenya String langsung
           token = responseData;
         } else if (responseData is Map<String, dynamic>) {
-          // Jika responsenya JSON
           token = responseData['token'];
         }
 
@@ -47,12 +44,8 @@ class DioProvider {
       if (token.isEmpty) {
         return 'Error: Token is empty';
       }
-      // if (user.statusCode == 200 && user.data != '') {
-      //   return json.encode(user.data);
-      // }
       if (user.statusCode == 200 && user.data != null) {
-        return user.data; // Jangan encode ulang, cukup return data JSON
-      }
+        return user.data; }
     } catch (error) {
       return error;
     }

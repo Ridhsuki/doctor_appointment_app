@@ -27,7 +27,7 @@ class _AppointmentCardState extends State<AppointmentCard> {
                 children: [
                   CircleAvatar(
                     radius: 30,
-                    backgroundImage: AssetImage('assets/profile1.jpg'),
+                    backgroundImage: AssetImage('assets/profile3.jpg'),
                   ),
                   SizedBox(width: 10),
                   Column(
@@ -35,13 +35,13 @@ class _AppointmentCardState extends State<AppointmentCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Dr NurSulthon ISmail',
+                        'Dr Tsunade',
                         style: TextStyle(color: Colors.white),
                       ),
                       SizedBox(height: 2),
                       Text(
-                        'Dental',
-                        style: TextStyle(color: Colors.black),
+                        'Gynecology',
+                        style: TextStyle(color: Colors.grey),
                       ),
                     ],
                   )

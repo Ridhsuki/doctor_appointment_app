@@ -1,5 +1,7 @@
 import 'package:doctor_appointment_app/screens/appointment_screen.dart';
+import 'package:doctor_appointment_app/screens/fav_screen.dart';
 import 'package:doctor_appointment_app/screens/home_screen.dart';
+import 'package:doctor_appointment_app/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -17,13 +19,19 @@ class _MainLayoutState extends State<MainLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
+      body:  PageView(
         controller: _page,
-        onPageChanged: (value) => setState(() {
-          // update page index when tab pressed/ switvh page
-          currentPage = value;
+        onPageChanged: ((value) {
+          setState(() {
+            currentPage = value;
+          });
         }),
-        children: const <Widget>[HomeScreen(), AppointmentScreen()],
+        children: <Widget>[
+          const HomeScreen(),
+          FavScreen(),
+          const AppointmentScreen(),
+          ProfileScreen(),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentPage,
@@ -36,12 +44,22 @@ class _MainLayoutState extends State<MainLayout> {
           });
         },
         items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+            icon: FaIcon(FontAwesomeIcons.houseChimneyMedical),
+            label: 'Home',
+          ),
           BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.houseChimneyMedical),
-              label: 'Home'),
+            icon: FaIcon(FontAwesomeIcons.solidHeart),
+            label: 'Favorite',
+          ),
           BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.solidCalendarCheck),
-              label: 'Appointment')
+            icon: FaIcon(FontAwesomeIcons.solidCalendarCheck),
+            label: 'Appointments',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(FontAwesomeIcons.solidUser),
+            label: 'Profile',
+          ),
         ],
       ),
     );

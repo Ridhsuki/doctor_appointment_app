@@ -16,14 +16,14 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
   Alignment _alignment = Alignment.centerLeft;
   List<dynamic> schedules = [
     {
-      "doctor_name": "Dokter Rudi",
-      "doctor_profile": "assets/profile1.jpg",
+      "doctor_name": "Doctor Tenma",
+      "doctor_profile": "assets/profile3.jpg",
       "category": "Dental",
       "status": FilterStatus.upComing,
     },
     {
-      "doctor_name": "Alif",
-      "doctor_profile": "assets/profile1.jpg",
+      "doctor_name": "Doctor Tsunade",
+      "doctor_profile": "assets/profile2.jpg",
       "category": "Cardiology",
       "status": FilterStatus.complete,
     },
@@ -44,17 +44,6 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
   @override
   Widget build(BuildContext context) {
     List<dynamic> filteredSchedules = schedules.where((var schedule) {
-      // switch (schedule['status']) {
-      //   case 'upComing':
-      //     schedule['status'] = FilterStatus.upComing.name;
-      //     break;
-      //   case 'complete':
-      //     schedule['status'] = FilterStatus.complete.name;
-      //     break;
-      //   case 'cancel':
-      //     schedule['status'] = FilterStatus.cancel.name;
-      //     break;
-      // }
       return schedule['status'] == status;
     }).toList();
     return SafeArea(

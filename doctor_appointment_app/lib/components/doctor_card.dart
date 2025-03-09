@@ -20,7 +20,7 @@ class DoctorCard extends StatelessWidget {
             children: [
               SizedBox(
                 width: Config.widthSize * 0.33,
-                child: Image.asset('assets/profile1.jpg', fit: BoxFit.fill),
+                child: Image.asset('assets/profile3.jpg', fit: BoxFit.fill),
               ),
               Flexible(
                 child: Padding(
@@ -29,7 +29,7 @@ class DoctorCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        'Dr Asakusa',
+                        'Dr Tenma Kenzo',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,

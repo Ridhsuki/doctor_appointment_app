@@ -36,11 +36,11 @@ class Config {
       OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(8)));
   static const focusBorder = OutlineInputBorder(
       borderRadius: BorderRadius.all(Radius.circular(8)),
-      borderSide: BorderSide(color: Colors.pinkAccent));
+      borderSide: BorderSide(color: Color(0xff000080)));
   static const errorBorder = OutlineInputBorder(
       borderRadius: BorderRadius.all(
         Radius.circular(8),
       ),
       borderSide: BorderSide(color: Colors.red));
-  static const primaryColor = Colors.pinkAccent;
+  static const primaryColor = Color(0xff000080);
 }

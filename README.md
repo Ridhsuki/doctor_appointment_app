@@ -34,12 +34,12 @@ Berikut adalah screenshot beberapa tampilan UI yang telah dibuat pada aplikasi i
   <img src="screenshots/login.png" alt="Login Screen" height="350" style="margin-right: 10px;">
   <img src="screenshots/register.png" alt="Register Screen" height="350" style="margin-right: 10px;">
   <img src="screenshots/home.png" alt="Home Screen" height="350" style="margin-right: 10px;">
-  <img src="screenshots/doctor detail.png" alt="Doctor Details Screen" height="350">
   <img src="screenshots/doctor favorite.png" alt="Doctor Favorite Screen" height="350" style="margin-right: 10px;">
+  <img src="screenshots/appointment schedule.png" alt="Appointment Schedule Screen" height="350" style="margin-right: 10px;">
 </p>
 
 <p align="left">
-  <img src="screenshots/appointment schedule.png" alt="Appointment Schedule Screen" height="350" style="margin-right: 10px;">
+  <img src="screenshots/doctor detail.png" alt="Doctor Details Screen" height="350">
   <img src="screenshots/booking page 2.png" alt="Booking Page Screen wekend" height="350" style="margin-right: 10px;">
   <img src="screenshots/booking page.png" alt="Booking Page Screen" height="350" style="margin-right: 10px;">
   <img src="screenshots/success booking.png" alt="Success Booking Screen" height="350">
